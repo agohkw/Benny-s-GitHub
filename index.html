@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garage Benny's</title>
+    <style>
+        /* RESET DE STYLE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f9;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        /* NAVBAR */
+        nav {
+            background-color: #222;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #be2e24;
+            color: #000;
+        }
+
+        /* SECTION PRINCIPALE */
+        .hero {
+            background-image: url('https://via.placeholder.com/1500x500'); /* Remplace cette URL par une image de garage */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* SECTIONS */
+        .services {
+            padding: 3rem 2rem;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .services .service {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .service-item {
+            background-color: #f4f4f9;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 1rem;
+            width: 300px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .service-item img {
+            width: 100px;
+            margin-bottom: 1rem;
+        }
+
+        .service-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-item p {
+            font-size: 1rem;
+        }
+
+        /* SECTION CONTACT */
+        .contact {
+            background-color: #f4b400;
+            color: #111;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact input,
+        .contact textarea {
+            width: 100%;
+            max-width: 400px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .contact button {
+            background-color: #111;
+            color: #fff;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .contact button:hover {
+            background-color: #f4f4f9;
+            color: #000;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        footer a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Benny's</h1>
+        <p>La qualité au service de votre véhicule</p>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">À propos</a>
+    </nav>
+
+    <!-- SECTION HERO -->
+    <section class="hero">
+        <h2>Benny's</h2>
+        <p>Entretien, réparation et personnalisation de votre véhicule. Confiez-nous votre voiture, nous en prendrons soin.</p>
+    </section>
+
+    <!-- SECTION SERVICES -->
+    <section id="services" class="services">
+        <h2>Nos Services</h2>
+        <div class="service">
+            <div class="service-item">
+                <img src="https://i.goopics.net/dndjfx.png" alt="Réparation">
+                <h3>Réparation</h3>
+                <p>L'entretien de votre véhicule et aussi le nôtre.</p>
+            </div>
+            <div class="service-item">
+                <img src="https://via.placeholder.com/100" alt="Entretien">
+                <h3>Entretien</h3>
+                <p>Nettoyage, soin, pour kawaîné votre voiture !</p>
+            </div>
+            <div class="service-item">
+                <img src="https://via.placeholder.com/100" alt="Personnalisation">
+                <h3>Personnalisation</h3>
+                <p>Customisation jusqu'à en rêver, peinture et équipements sur mesure.</p>
+            </div>
+        </div>
+    </section>
+
+    <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garage Benny's - Prise de Rendez-vous</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background-color: #f4f4f9;
+        }
+
+        .contact {
+            background-color: #f4b400;
+            color: #111;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact input,
+        .contact textarea {
+            width: 100%;
+            max-width: 400px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .contact button {
+            background-color: #111;
+            color: #fff;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .contact button:hover {
+            background-color: #f4f4f9;
+            color: #000;
+        }
+
+        .success-message {
+            color: #28a745;
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SECTION PRISE DE RENDEZ-VOUS -->
+    <section class="contact" id="contact">
+        <h2>Prise de rendez-vous</h2>
+        <form id="appointment-form">
+            <input type="text" id="name" placeholder="Nom & Prénom" required>
+            <input type="Phone number" id="Phone number" placeholder="Numéro de téléphone" required>
+            <textarea id="message" placeholder="Détail du rendez-vous" rows="5" required></textarea>
+            <form action="#" method="post">
+                <input type="text" placeholder="Nom" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Votre message" rows="5" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+        </form>
+        <p class="success-message" id="success-message" style="display: none;">Votre rendez-vous a été pris en compte et envoyé sur Discord !</p>
+    </section>
+
+    <script>
+        // Remplacez l'URL ci-dessous par l'URL de votre webhook Discord
+        const webhookURL = 'https://discord.com/api/webhooks/1315333776112488520/f1Cu9GdFs_VwbtQFauidSeZ3FBcIN3bshPgo_hyLHFEk54tDs288fUN26UgFlzDM3K2h';
+
+        // Sélection du formulaire et des champs d'entrée
+        const form = document.getElementById('appointment-form');
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const messageInput = document.getElementById('message');
+        const successMessage = document.getElementById('success-message');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Empêche la soumission classique du formulaire
+
+            // Récupérer les valeurs des champs
+            const name = nameInput.value;
+            const email = emailInput.value;
+            const message = messageInput.value;
+
+            // Vérifie que tous les champs sont remplis
+            if (!name || !email || !message) {
+                alert('Veuillez remplir tous les champs.');
+                return;
+            }
+
+            // Crée le contenu à envoyer à Discord
+            const payload = {
+                content: `**🚗 Nouvelle prise de rendez-vous 🚗**\n**Nom**: ${name}\n**Email**: ${email}\n**Message**: ${message}`
+            };
+
+            // Envoie les données au webhook Discord
+            fetch(webhookURL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+            .then(response => {
+                if (response.ok) {
+                    successMessage.style.display = 'block'; // Affiche le message de succès
+                    form.reset(); // Réinitialise le formulaire
+                } else {
+                    alert('Une erreur est survenue lors de l\'envoi du rendez-vous.');
+                }
+            })
+            .catch(error => {
+                alert('Erreur lors de la connexion au webhook Discord.');
+                console.error('Erreur:', error);
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Fait par Eden Cruz</p>
+        <p>Suivez l'actualité du Benny's.
+        </p>
+    </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garage Benny's</title>
+    <style>
+        /* Exemple de section avec une image de fond */
+        .hero {
+            background-image: url('https://i.goopics.net/g1k09p.png'); /* Remplace l'URL par celle de ton image */
+            background-size: cover; /* L'image occupe toute la section */
+            background-position: center; /* L'image est centrée */
+            background-attachment: fixed; /* L'image reste fixe lors du scroll */
+            height: 500px; /* Hauteur de la section */
+            color: #dbd0d0; /* Couleur du texte en blanc pour qu'il ressorte */
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); /* Ombre pour que le texte soit lisible */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SECTION HERO AVEC UNE IMAGE DE FOND -->
+    <section class="hero">
+        <h1>Bienvenue au Garage Benny's</h1>
+    </section>
+
+</body>
+</html>
+
+
