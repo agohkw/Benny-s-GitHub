@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Commande</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://i.goopics.net/5yxeaz.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            width: 550px;
+        }
+        .form-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, textarea, button {
+            width: 97%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+        }
+        input, textarea {
+            background: #333;
+            color: #fff;
+        }
+        button {
+            background: #db0e0e;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #d31010;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Formulaire de Recrutement</h1>
+        <form id="recruitment-form">
+            <label for="name">Nom & Prénom</label>
+            <input type="text" id="name" placeholder="Entrez votre nom" required>
+
+            <label for="age">Âge</label>
+            <input type="number" id="age" placeholder="Entrez votre âge" required>
+
+            <label for="telephone">Numéro de téléphone :</label>
+            <input type="text" id="telephone" name="telephone" required maxlength="8" placeholder="123-4567" title="Format attendu : xxx-xxxx">
+
+            <label for="Disponibilite">Disponibilité</label>
+            <input type="text" id="Disponibilite" placeholder="Entrez vos disponibilités" required>
+
+            <label for="experience">Expérience Professionnelle</label>
+            <input type="text" id="experience" placeholder="Ex : Société / intérim" required>
+
+            <label for="QD">Qualités et Défauts</label>
+            <input type="text" id="QD" placeholder="3 de chaque" required>
+
+            <label for="commentaire">Pourquoi Vous et pas un autre ?</label>
+            <textarea id="commentaire" name="commentaire" rows="5" placeholder="Expliquez ici" required></textarea>
+
+            <button type="submit">Postuler</button>
+        </form>
+    </div>
+
+    <script>
+            // Ajout du formatage automatique pour le champ de téléphone
+            document.getElementById('telephone').addEventListener('input', function(event) {
+                let input = event.target.value.replace(/\D/g, ''); // Supprimer tous les caractères non numériques
+
+            // Ajout d'un formatage avec un tiret (xxx-xxxx)
+                if (input.length > 3) {
+                input = input.slice(0, 3) + '-' + input.slice(3);
+             }
+
+             event.target.value = input.slice(0, 8); // Limiter à 8 caractères maximum
+            });
+        
+        // Ajout d'un gestionnaire d'événements pour le formulaire
+        document.getElementById('recruitment-form').addEventListener('submit', async function (event) {
+            event.preventDefault(); // Empêche la soumission normale du formulaire
+
+            // Récupération des données du formulaire
+            const name = document.getElementById('name').value.trim();
+            const age = document.getElementById('age').value.trim();
+            const telephone = document.getElementById('telephone').value.trim();
+            const disponibilite = document.getElementById('Disponibilite').value.trim();
+            const experience = document.getElementById('experience').value.trim();
+            const QD = document.getElementById('QD').value.trim();
+            const commentaire = document.getElementById('commentaire').value.trim();
+
+
+
+
+            // Validation simple
+            if (!name || !age || !telephone || !disponibilite || !experience || !QD || !commentaire) {
+                alert("Veuillez remplir tous les champs !");
+                return;
+            }
+
+            // Créer le payload pour Discord Webhook
+            const webhookUrl = 'https://discord.com/api/webhooks/1315724526939672606/WAl30RbhEsubJXwMaCAgzGMggPlQk8uIwmlb-FG_1Keb9VBUA_lvZiMfe24scw1SBus-'; // Remplacez par votre URL de webhook Discord
+            const message = {
+                content: "**Nouvelle candidature reçue !** 🎉",
+                embeds: [
+                    {
+                        title: "Détails de la candidature",
+                        color: 3447003, // Couleur en décimal
+                        fields: [
+                            { name: "Nom & Prénom", value: name || "Non renseigné", inline: true },
+                            { name: "Âge", value: age || "Non renseigné", inline: true },
+                            { name: "Téléphone", value: telephone || "Non renseigné", inline: true },
+                            { name: "Disponibilité", value: disponibilite || "Non renseigné", inline: true },
+                            { name: "Expérience", value: experience || "Non renseigné", inline: true },
+                            { name: "Qualités / Défauts", value: QD || "Non renseigné", inline: true },
+                            { name: "Pourquoi Vous ?", value: commentaire || "Non renseigné", inline: false }
+                        ]
+                    }
+                ]
+            };
+
+
+
+            // Envoi des données au webhook Discord
+            try {
+                const response = await fetch(webhookUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(message)
+                });
+
+                if (response.ok) {
+                    alert("Candidature envoyée avec succès !");
+                    document.getElementById('recruitment-form').reset(); // Réinitialise le formulaire
+                } else {
+                    alert("Erreur lors de l'envoi de la candidature. Veuillez réessayer.");
+                }
+            } catch (error) {
+                console.error("Erreur:", error);
+                alert("Une erreur est survenue lors de l'envoi.");
+            }
+        });
+    </script>
+</body>
+</html>
