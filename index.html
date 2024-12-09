@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garage Benny's</title>
+    <style>
+        /* RESET DE STYLE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f9;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #d51616;
+            color: #fff;
+            padding: 1rem 2rem;
+            display: flex;  /* Utilisation de Flexbox pour le header */
+            justify-content: space-between; /* Espace entre le logo et la div du texte */
+            align-items: center; /* Centrer verticalement les éléments dans le header */
+        }
+
+        /* Conteneur du texte */
+        .header-content {
+            display: flex;
+            align-items: center;  /* Alignement vertical du logo et du texte */
+            width: 100%;  /* Prendre toute la largeur disponible */
+            justify-content: space-between;  /* Laisser de l'espace entre les éléments */
+        }
+
+        .logo {
+            width: 150px;  /* Ajuste la taille du logo */
+            height: auto;
+            margin-right: 1rem;  /* Espace entre le logo et le texte */
+        }
+
+        .text-content {
+            display: flex;
+            flex-direction: column;  /* Aligner le titre et le paragraphe verticalement */
+            justify-content: center;
+            align-items: center;  /* Centrer le texte horizontalement */
+            width: 100%;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;  /* Enlève la marge du titre */
+            margin-right: 180px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin: 0;  /* Enlève la marge du paragraphe */
+            margin-right: 180px;
+        }
+
+        /* NAVBAR */
+        nav {
+            background-color: #0000008a;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #0000008a;
+            color: #0000008a;
+        }
+
+        /* SECTION PRINCIPALE */
+        .hero {
+            background-image: url('https://via.placeholder.com/1500x500'); /* Remplace cette URL par une image de garage */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 5rem 2rem;
+            display: flex;
+            flex-direction: column; /* Ajoutez cette propriété pour organiser les éléments en colonne */
+            justify-content: center; /* Centre le contenu verticalement */
+            align-items: center; /* Centre le contenu horizontalement */
+}
+
+
+        .hero h2 {
+    
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* SECTIONS */
+        .services {
+            padding: 3rem 2rem;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .services .service {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .service-item {
+            background-color: #f4f4f9;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 1rem;
+            width: 300px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .service-item img {
+            width: 100px;
+            margin-bottom: 1rem;
+        }
+
+        .service-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-item p {
+            font-size: 1rem;
+        }
+
+        /* SECTION CONTACT */
+        .contact {
+            background-color: #f4b400;
+            color: #111;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact input,
+        .contact textarea {
+            width: 100%;
+            max-width: 400px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .contact button {
+            background-color: #111;
+            color: #fff;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .contact button:hover {
+            background-color: #f4f4f9;
+            color: #000;
+        }
+        /* SECTION RÈGLEMENT */
+        .reglement {
+            padding: 3rem 2rem;
+            background-color: #fff;
+            color: #333;
+            text-align: center;
+        }
+
+        .reglement h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .reglement-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .reglement-content ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .reglement-content li {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        footer a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-content">
+            <img src="logo.png" alt="Logo Benny's" class="logo">
+            <div class="text-content">
+                <h1>Benny's</h1>
+                <p>La qualité au service de votre véhicule</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a href="#reglement">Reglement</a>
+        <a href="Recrutement.html">Recrutement</a>
+    </nav>
+
+    <!-- SECTION HERO -->
+    <section class="hero">
+        <h2>Benny's</h2>
+        <p>Entretien, réparation et personnalisation de votre véhicule. Confiez-nous votre voiture, nous en prendrons soin.</p>
+    </section>
+
+    <!-- SECTION SERVICES -->
+    <section id="services" class="services">
+        <h2>Nos Services</h2>
+        <div class="service">
+            <div class="service-item">
+                <img src="https://i.goopics.net/dndjfx.png" alt="Réparation">
+                <h3>Réparation</h3>
+                <p>L'entretien de votre véhicule et aussi le nôtre.</p>
+            </div>
+            <div class="service-item">
+                <img src="https://via.placeholder.com/100" alt="Entretien">
+                <h3>Entretien</h3>
+                <p>Nettoyage, soin, pour kawaîné votre voiture !</p>
+            </div>
+            <div class="service-item">
+                <img src="https://via.placeholder.com/100" alt="Personnalisation">
+                <h3>Personnalisation</h3>
+                <p>Customisation jusqu'à en rêver, peinture et équipements sur mesure.</p>
+            </div>
+        </div>
+    </section>
+
+    <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garage Benny's - Prise de Rendez-vous</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background-color: #f4f4f9;
+        }
+
+        .contact {
+            background-color: #e52020;
+            color: #111;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact input,
+        .contact textarea {
+            width: 100%;
+            max-width: 400px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .contact button {
+            background-color: #111;
+            color: #fff;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .contact button:hover {
+            background-color: #f4f4f9;
+            color: #000;
+        }
+
+        .success-message {
+            color: #28a745;
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SECTION PRISE DE RENDEZ-VOUS -->
+    <section class="contact" id="contact">
+        <h2>Prise de rendez-vous</h2>
+        <form id="appointment-form">
+            <input type="text" id="name" placeholder="Nom & Prénom" required>
+            <input type="tel" id="phone" placeholder="Numéro de téléphone" required>
+            <textarea id="message" placeholder="Détail du rendez-vous" rows="5" required></textarea>
+            <button type="submit" id="submit-button">Envoyer</button>
+        </form>
+        <p class="success-message" id="success-message" style="display: none;">Votre rendez-vous a été pris en compte et envoyé sur Discord !</p>
+    </section>
+
+     <!-- SECTION RÈGLEMENT -->
+     <section id="reglement" class="reglement">
+        <h2>Règlement</h2>
+        <div class="reglement-content">
+            <p>Bienvenue chez Benny's. Voici notre règlement :</p>
+            <ul>
+                    <li>Le présent règlement a pour objet de garantir la sécurité, le respect mutuel et le bon déroulement des services au sein du garage Benny's. Ce règlement s'applique à tous les citoyens (clients, visiteurs et accompagnants) se rendant dans l’enceinte du garage.</li>
+                    <li>Tout citoyen entrant dans les zones réservés au Employé sans autorisation s'expose à des sanctions.</li>
+                    <li>Il est formellement interdit de toucher les outils, équipements et machines du garage.</li>
+                    <li>Toute manipulation non autorisée expose le citoyen à des risques de blessure et à des sanctions financières en cas de dégradation.</li>
+                    <li>Chaque citoyen doit faire preuve de respect et de courtoisie envers le personnel et les autres clients.</li>
+                    <li>Les comportements agressifs, insultes, violences ou menaces sont strictement interdits et peuvent entraîner l'exclusion immédiate du garage.</li>
+                    <li>Il est strictement interdit de fumer à l'intérieur du garage, de fumer des stupéfiants, ou d'être armé au sein de l'établissement</li>
+                    <li>La consommation d'alcool ou de substances illicites est interdite dans toutes les zones du garage.</li>
+                    <li>Article 5 : Gestion des Véhicules des Citoyens</li>
+                    <li>Arrivée des véhicules :</li>
+                    <li>Les moyens de paiement acceptés sont espèces, carte bancaire uniquement</li>
+                    <li>Le paiement doit être effectué intégralement avant la sortie du véhicule. ( Sauf récidive )</li>
+                    <li>Les citoyens doivent respecter la propreté des locaux.</li>
+                    <li>Les poubelles doivent être utilisées pour les déchets, et il est interdit de jeter des détritus au sol.</li>
+                    <li>Il est interdit de dégrader le matériel (chaises, tables, écrans) dans l'établissement ou dans les zones accessibles au public.</li>
+                    <li>Toute dégradation volontaire expose le citoyen à des sanctions et au remboursement des frais de réparation.</li>           
+                    <li>En cas de non-respect des consignes de sécurité, insultes ou violences, les sanctions peuvent inclure :</li>
+                    <li>Interdiction d’accès au garage. ( BL )</li>
+                    <li>Frais de réparation ou de nettoyage en cas de dégradations volontaires.</li>
+                    <li>Dépôt de plainte et poursuites judiciaires en cas de comportement violent ou dangereux.</li>
+                    <li>En cas de dégradation volontaire des équipements ou des véhicules, le citoyen devra assumer les frais de réparation.</li>
+                    <li>Le garage se réserve le droit de poursuivre en justice toute personne ayant causé des dégâts matériels ou porté atteinte au personnel.</li>                   
+                    <li>Si vous ne pouvez pas régler une facture, vous devez la payé dans le délais des 7 jours, si récidive, la facture seras non seulement doublées, mais aussi forcé sur le compte bancaire.</li>
+                    <li>Les citoyens doivent se conformer au présent règlement et respecter les consignes de sécurité.</li>
+                    <li>En cas de comportement imprudent (ex : entrée non autorisée dans l'atelier), le garage décline toute responsabilité en cas d’accident.</li>
+                    <li>Le garage s'engage à assurer la sécurité des véhicules confiés et à les conserver dans un espace sécurisé.</li>
+                    <li>Toutefois, le garage n'est pas responsable des objets personnels laissés dans les véhicules (téléphones, vêtements, etc.).</li>          
+                    <li>Ce règlement entre en vigueur à compter de sa date de publication.</li>
+                    <li>Tout citoyen accédant au garage accepte de se conformer au présent règlement.</li>
+                    <li>La direction se réserve le droit de modifier ce règlement en fonction des besoins du garage ou des évolutions des lois et réglementations.</li>
+                    <li>Ce règlement vise à assurer la sécurité, le respect et le bon fonctionnement du Benny's. Merci de votre compréhension et de votre collaboration. 🚗🔧</li>
+                    <li>Cordialement, l'équipe Directionnel du Benny's</li>
+            </ul>
+        </div>
+    </section>
+    
+
+    <script>
+        // 🔗 URL du webhook Discord (Remplacez par votre lien webhook)
+        const webhookURL = 'https://canary.discord.com/api/webhooks/1315333776112488520/f1Cu9GdFs_VwbtQFauidSeZ3FBcIN3bshPgo_hyLHFEk54tDs288fUN26UgFlzDM3K2h';
+
+        // 🛠️ Sélection des éléments du formulaire
+        const form = document.getElementById('appointment-form');
+        const nameInput = document.getElementById('name');
+        const phoneInput = document.getElementById('phone');
+        const messageInput = document.getElementById('message');
+        const submitButton = document.getElementById('submit-button');
+        const successMessage = document.getElementById('success-message');
+
+        // 🎉 Fonction d'envoi des données au webhook Discord
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Empêche l'envoi classique du formulaire
+
+            // 🔍 Récupération des valeurs saisies
+            const name = nameInput.value.trim();
+            const phone = phoneInput.value.trim();
+            const message = messageInput.value.trim();
+
+            // 🛑 Vérifie si les champs sont remplis
+            if (!name || !phone || !message) {
+                alert('❌ Veuillez remplir tous les champs.');
+                return;
+            }
+
+            // 📦 Création du contenu du message pour Discord
+            const payload = {
+                content: `**🚗 Nouvelle prise de rendez-vous 🚗**\n
+            🧑 **Nom**: ${name}\n
+            📞 **Téléphone**: ${phone}\n
+            ✉️ **Message**: ${message}`
+            };
+
+            // 📡 Envoi des données au webhook Discord
+            submitButton.disabled = true; // Désactive le bouton pendant l'envoi
+
+            fetch(webhookURL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+            .then(response => {
+                if (response.ok) {
+                    successMessage.style.display = 'block'; // Affiche le message de succès
+                    form.reset(); // Vide les champs du formulaire
+                } else {
+                    alert('❌ Erreur lors de l\'envoi du rendez-vous.');
+                }
+            })
+            .catch(error => {
+                alert('❌ Une erreur est survenue lors de l\'envoi.');
+                console.error('Erreur:', error);
+            })
+            .finally(() => {
+                submitButton.disabled = false; // Réactive le bouton
+            });
+        });
+
+    </script>
+
+</body>
+</html>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Fait par Eden Cruz</p>
+        <p>Suivez l'actualité du Benny's.
+        </p>
+    </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garage Benny's</title>
+    <style>
+        /* Exemple de section avec une image de fond */
+        .hero {
+            background-image: url('https://i.goopics.net/g1k09p.png'); /* Remplace l'URL par celle de ton image */
+            background-size: cover; /* L'image occupe toute la section */
+            background-position: center; /* L'image est centrée */
+            background-attachment: fixed; /* L'image reste fixe lors du scroll */
+            height: 500px; /* Hauteur de la section */
+            color: #dbd0d0; /* Couleur du texte en blanc pour qu'il ressorte */
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); /* Ombre pour que le texte soit lisible */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SECTION HERO AVEC UNE IMAGE DE FOND -->
+    <section class="hero">
+        <h1>Merci de votre Visite</h1>
+    </section>
+
+</body>
+</html>
+
+
